@@ -1,0 +1,89 @@
+/*
+ * 1. 기본 설정 (Basic Setup)
+ */
+body {
+    font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif; /* 깔끔한 폰트 */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* 아주 연한 회색 배경 */
+}
+
+/*
+ * 2. 헤더 스타일 (Header - 이름과 타이틀)
+ */
+#header {
+    background-color: #ffffff; /* 흰색 배경 */
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 5px solid #007bff; /* 핵심 포인트 색상 (파란색) */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 미세한 그림자 */
+}
+
+#header h1 {
+    font-size: 2.8em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#header hr {
+    width: 50px;
+    border-color: #007bff;
+    margin: 10px auto;
+}
+
+/*
+ * 3. 메인 레이아웃 (Main Layout - 좌우 분할)
+ */
+main {
+    display: flex; /* Flexbox를 사용하여 좌우 정렬 */
+    width: 80%; /* 중앙에 배치 */
+    max-width: 1000px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    border-radius: 8px; /* 모서리를 둥글게 */
+    overflow: hidden; /* 내부 요소 정리 */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#mainLeft {
+    flex: 1; /* 1/3 비율 */
+    background-color: #e9ecef; /* 왼쪽 사이드바에 연한 회색 */
+    padding: 30px 20px;
+}
+
+#mainRight {
+    flex: 2; /* 2/3 비율 */
+    padding: 30px;
+}
+
+/*
+ * 4. 섹션 스타일 (Section Styles)
+ */
+section {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ccc; /* 점선 구분자 */
+}
+
+/* 마지막 섹션은 구분자 제거 */
+section:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    color: #007bff; /* 섹션 제목을 포인트 색상으로 강조 */
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-left: 5px solid #007bff;
+    padding-left: 10px;
+}
+
+/*
+ * 5. 내용 정리 (Content Formatting)
+ */
+/* 목록/경력/학력 등의 내용에 일관된 간격 적용 */
+#mainLeft section p, #mainRight section p {
+    margin: 5px 0;
+}
