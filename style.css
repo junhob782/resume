@@ -2,7 +2,8 @@
  * 1. 기본 설정 (Basic Setup)
  */
 body {
-    font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif; /* 깔끔한 폰트 */
+    /* 'Noto Sans KR'이 HTML에서 로드되었으므로, 해당 폰트 적용 */
+    font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif; 
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -32,13 +33,19 @@ body {
     margin: 10px auto;
 }
 
+#header p {
+    font-size: 1.2em;
+    color: #666;
+    margin-top: 5px;
+}
+
 /*
  * 3. 메인 레이아웃 (Main Layout - 좌우 분할)
  */
 main {
     display: flex; /* Flexbox를 사용하여 좌우 정렬 */
-    width: 80%; /* 중앙에 배치 */
-    max-width: 1000px;
+    width: 90%; /* 중앙에 배치 */
+    max-width: 1100px;
     margin: 30px auto;
     background-color: #ffffff;
     border-radius: 8px; /* 모서리를 둥글게 */
@@ -57,6 +64,20 @@ main {
     padding: 30px;
 }
 
+/* 미디어 쿼리: 모바일 화면에서는 좌우 분할을 수직 정렬로 변경 */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+    #mainRight {
+        padding-top: 10px; /* 좌우 분할 해제 후 간격 조정 */
+    }
+}
+
+
 /*
  * 4. 섹션 스타일 (Section Styles)
  */
@@ -74,6 +95,7 @@ section:last-child {
 h2 {
     color: #007bff; /* 섹션 제목을 포인트 색상으로 강조 */
     font-size: 1.5em;
+    font-weight: 700;
     margin-top: 0;
     margin-bottom: 10px;
     border-left: 5px solid #007bff;
@@ -83,7 +105,34 @@ h2 {
 /*
  * 5. 내용 정리 (Content Formatting)
  */
-/* 목록/경력/학력 등의 내용에 일관된 간격 적용 */
+/* 목록 전체 스타일: 기본 점 제거 및 간격 초기화 */
+#mainLeft section ul, #mainRight section ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+/* 목록 항목 스타일 */
+#mainLeft section li, #mainRight section li {
+    margin-bottom: 8px; /* 항목 간 간격 */
+    padding-left: 15px;
+    position: relative;
+    /* 항목 앞에 작은 파란색 점 추가 */
+    color: #444; /* 텍스트 색상 조정 */
+}
+
+#mainLeft section li::before, #mainRight section li::before {
+    content: "•"; 
+    color: #007bff;
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+
+/* p 태그에도 간격 적용 */
 #mainLeft section p, #mainRight section p {
     margin: 5px 0;
+    color: #444;
 }
