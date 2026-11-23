@@ -136,3 +136,138 @@ h2 {
     margin: 5px 0;
     color: #444;
 }
+
+/* =========================================
+   2페이지 디자인 보완
+========================================= */
+
+/* 2페이지 전체 */
+.resume-page.page-break {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 1100px;
+    min-height: 1050px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 2페이지 상단 헤더 */
+.page-title {
+    background: #ffffff;
+    border-bottom: 5px solid #007bff;
+    padding: 25px 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.page-title h1 {
+    font-size: 2em;
+    color: #333;
+    margin: 0;
+}
+
+.page-title span {
+    color: #666;
+}
+
+/* 2페이지 섹션 */
+.resume-page.page-break section {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-bottom: 1px dashed #ccc;
+    border-radius: 6px;
+}
+
+/* 섹션 제목 - 1페이지와 동일한 파란색 */
+.resume-page.page-break section h2 {
+    color: #007bff;
+    font-size: 1.5em;
+    font-weight: 700;
+    border-left: 5px solid #007bff;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+/* 자격증 및 활동 카드 */
+.resume-item {
+    background: #f8f9fa;
+    border-left: 4px solid #007bff;
+    border-radius: 5px;
+    padding: 15px 18px;
+    margin-bottom: 12px;
+    border-top: none;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.resume-item h3 {
+    color: #333;
+    font-size: 1.05em;
+    margin: 0 0 5px;
+}
+
+.resume-item p {
+    color: #666;
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+/* 취득 예정 자격증 */
+.resume-item.planned {
+    background: #f4f8ff;
+    border-left: 4px solid #8aaee0;
+}
+
+.planned-label {
+    display: inline-block;
+    background: #e5efff;
+    color: #007bff;
+    font-size: 0.75em;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+/* 증빙자료 링크 */
+.certificate-links a {
+    color: #007bff;
+    font-size: 0.85em;
+    margin-right: 12px;
+    text-decoration: none;
+}
+
+.certificate-links a:hover {
+    text-decoration: underline;
+}
+
+/* 페이지 번호 */
+.page-number {
+    text-align: center;
+    color: #999;
+    font-size: 0.8em;
+    margin-top: 30px;
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+    .resume-page.page-break {
+        width: 100%;
+        margin: 0 0 20px;
+        padding: 20px;
+    }
+}
+
+/* 인쇄 */
+@media print {
+    .resume-page.page-break {
+        width: 100%;
+        margin: 0;
+        padding: 10mm;
+        box-shadow: none;
+        border-radius: 0;
+        min-height: 0;
+    }
+}
